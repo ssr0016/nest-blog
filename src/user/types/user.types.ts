@@ -1,3 +1,3 @@
-import { UserEntity } from '@/src/user/dto/user.entity';
+import { UserEntity } from '@/src/user/user.entity';
 
 export type IUser = Omit<UserEntity, 'hashPassword'>;
