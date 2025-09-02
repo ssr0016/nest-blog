@@ -2,6 +2,7 @@
 # 1) npm install pg typeorm @nestjs/typeorm
 # 2) npm install bcrypt
 # 3) npm install jsonwebtoken @nestjs/config
+# 4) npm install class-transformer class-validator
 
 ### Migrations command
 # npm install typeorm reflect-metadata pg ts-node --save
