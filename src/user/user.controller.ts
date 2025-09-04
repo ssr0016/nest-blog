@@ -5,12 +5,14 @@ import {
   Body,
   UsePipes,
   ValidationPipe,
+  UseGuards,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from '@/src/user/dto/createUser.dto';
 import { IUserResponse } from '@/src/user/types/userRespose.interface';
 import { LoginDto } from '@/src/user/dto/loginUser.dto';
 import { User } from '@/src/user/decorators/user.decorator';
+import { AuthGuard } from '@/src/user/guard/auth.guards';
 
 @Controller('')
 export class UserController {
@@ -35,6 +37,7 @@ export class UserController {
   }
 
   @Get('user')
+  @UseGuards(AuthGuard)
   async getCurrentUser(@User() user): Promise<IUserResponse> {
     return this.userService.generateUserResponse(user);
   }
